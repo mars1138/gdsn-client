@@ -1,13 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&display=swap');
+
+:root {
+  --bp-large: 78.15em; /* 1250px */
+  --bp-medium: 61.25em; /* 980px */
+  --bp-medium-sm: 45em /* 860px */
+  --bp-small: 37.5em; /* 715px */
+  --bp-smallest: 31.25em; /* 600px */
+  
+  --primary: rgb(41, 141, 235);
+  --primary-light: rgb(37,157,242);
+  --secondary: rgb(93,180,242);	
+  --secondary-light: rgb(154,208,245);
+  --secondary-light-tr: rgba(154, 209, 245, 0.904);
+  --secondary-light-2: rgb(182, 222, 248);
+
+  --white-1: rgb(250, 250, 250);
+  --white-2: rgb(247, 247, 247);
+  --white-3: rgb(249, 249, 249);
+  --white-4: rgb(235, 235, 235);
+
+  --black-1: #363b49;
+  --black-2: #282c37;
+
+  --gray-1: #9baec8;
+  --gray-2: #d9e1e8;
+  --gray-3:  rgba(207, 207, 207, 1);
+  --gray-4:  rgba(207, 207, 207, 0.534);
+  --gray-5:  rgb(170, 170, 170);
+
+  --green-1: rgb(72, 180, 78);
+
+  --red-1: #b84a39;
+  --red-2: #fff4f5;
+
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --button-shadow-hover: 0 2px 8px rgba(0, 0, 0, 0.35);
+  
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --modal-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --button-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  --borderRadius-button: 6px;
+  --borderRadius-img: 2px;
+  --borderRadius-card: 4px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  color: var(--black-1);
+}
+
+@media only screen and (max-width: 980px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 65%;
+  }
+}
+
 body {
   margin: 0;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  background-color: var(--white-3);
+
+  text-align: justify;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  color: var(--primary);
+}
+h3 {
+  color: var(--primary-light);
+}
+
+img {
+  box-shadow: var(--img-shadow);
+  border-radius: var(--borderRadius-img);
+}
+
+video {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: var(--borderRadius-card);
+}
+
+/* .slide-in-left-enter {
+  transform: translateX(-100%);
+}
+
+.slide-in-left-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 200ms;
+}
+
+.slide-in-left-exit {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.slide-in-left-exit-active {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 200ms;
+} */
