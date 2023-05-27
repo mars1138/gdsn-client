@@ -13,6 +13,7 @@ import ResourcesPage from './resources/ResourcesPage';
 import PlansPage from './plans/PlansPage';
 import ProductsPage from './products/ProductsPage';
 import AboutPage from './about/AboutPage';
+import MainHeader from './shared/Navigation/MainHeader';
 
 function App() {
   useEffect(() => {}, []);
@@ -43,7 +44,12 @@ function App() {
     </Switch>
   );
 
-  return <Router>{routes}</Router>;
+  return (
+    <Router>
+      <MainHeader />
+      <main>{routes}</main>
+    </Router>
+  );
 }
 
 export default App;
