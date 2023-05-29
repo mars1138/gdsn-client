@@ -9,13 +9,13 @@ const MainHeader = () => {
   return (
     <React.Fragment>
       <header className={classes.header}>
-        <div>
+        <div className={classes.logo}>
           <Logo />
         </div>
-        <h1>
+        <h1 className={classes['header-title']}>
           <Link to="/">GDSN-Plus</Link>
         </h1>
-        <nav>
+        <nav className={classes['header-nav']}>
           <NavLinks />
         </nav>
       </header>

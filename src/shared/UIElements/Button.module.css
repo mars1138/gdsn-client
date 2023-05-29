@@ -1,0 +1,96 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--white-3);
+  background: var(--primary);
+  padding: 0.5rem 1.15rem;
+  border-radius: var(--borderRadius-button);
+  border: 1px solid var(--primary);
+  box-shadow: var(--button-shadow);
+  transition: all 0.2s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button hover {
+  background: var(--primary-light);
+  border: 1px solid var(--primary-light);
+  box-shadow: var(--button-shadow-hover);
+  transform: translateY(-1px);
+}
+
+.inverse {
+  color: var(--primary);
+  background: var(--white-3);
+}
+.inverse:hover {
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: var(--white-3);
+}
+
+/* For product table */
+.action {
+  padding: 0.25rem 1rem;
+  color: var(--gray-5);
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+.action:hover {
+  color: var(--secondary);
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.disabled,
+.disabled:hover {
+  background: var(--gray-4);
+  cursor: not-allowed;
+  transform: translateY(0);
+  border: none;
+  box-shadow: none;
+  border: 1px solid var(--gray-4);
+}
+
+.disabled * {
+  color: var(--gray-3);
+}
+
+.go {
+  background-color: var(--green-1);
+  /* color: var(--red-2); */
+  border: 1px solid var(--green-1);
+}
+.go:hover {
+  background-color: var(--green-1);
+  /* color: var(--red-2); */
+  border: 1px solid var(--green-1);
+}
+
+.danger {
+  background-color: var(--red-1);
+  color: var(--red-2);
+  border: 1px solid var(--red-1);
+}
+.danger:hover {
+  background-color: var(--red-1);
+  color: var(--red-2);
+  border: 1px solid var(--red-1);
+}
+
+ion-icon {
+  pointer-events: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .button {
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    padding: 1rem 1rem;
+  }
+}
