@@ -13,7 +13,7 @@ const Button = (props) => {
 
   if (props.to) {
     return (
-      <Link to={props.to} classes={buttonClasses}>
+      <Link to={props.to} className={buttonClasses}>
         {props.children}
       </Link>
     );
@@ -28,7 +28,7 @@ const Button = (props) => {
 
   return (
     <button
-      className={buttClasses}
+      className={buttonClasses}
       onClick={props.onClick}
       disabled={props.disabled}
       type={props.type}
