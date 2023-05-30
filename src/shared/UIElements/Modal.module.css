@@ -1,0 +1,47 @@
+.modal {
+  position: fixed;
+  top: 15vh;
+  left: calc(50% - 25rem);
+  width: 50rem;
+  min-height: 150px;
+  background-color: var(--white-3);
+  padding: 2rem;
+  border-radius: var(--borderRadius-modal);
+  box-shadow: 0 2px 8px var(--modal-shadow);
+  z-index: 100;
+  animation: pop-in 200ms ease-out forwards;
+}
+
+.header {
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+}
+
+.content {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.button button {
+  margin-left: auto;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer button {
+  margin-left: 1rem;
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(90%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
