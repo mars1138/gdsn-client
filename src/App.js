@@ -12,38 +12,120 @@ import ServicesPage from './services/ServicesPage';
 import ResourcesPage from './resources/ResourcesPage';
 import PlansPage from './plans/PlansPage';
 import ProductsPage from './products/ProductsPage';
+// import ProductsList from './products/ProductsList';
+// import AddProduct from './products/AddProduct';
+// import UpdateProduct from './products/UpdateProduct';
+
 import AboutPage from './about/AboutPage';
 import MainHeader from './shared/Navigation/MainHeader';
 import Footer from './shared/components/footer/Footer';
 
 function App() {
+  const isAuth = false;
+  let routes;
+
   useEffect(() => {}, []);
 
-  const routes = (
-    <Switch>
-      <Route path="/" exact>
-        <Redirect to="/home" />
-      </Route>
-      <Route path="/home" exact>
-        <HomePage />
-      </Route>
-      <Route path="/services">
-        <ServicesPage />
-      </Route>
-      <Route path="/resources">
-        <ResourcesPage />
-      </Route>
-      <Route path="/plans">
-        <PlansPage />
-      </Route>
-      <Route path="/products">
-        <ProductsPage />
-      </Route>
-      <Route path="/about">
-        <AboutPage />
-      </Route>
-    </Switch>
-  );
+  if (isAuth) {
+    routes = (
+      <Switch>
+        <Route path="/" exact>
+          <Redirect to="/home" />
+        </Route>
+        <Route path="/home" exact>
+          <HomePage />
+        </Route>
+        <Route path="/products" exact>
+          <ProductsPage />
+        </Route>
+        <Route path="/products/active">
+          <ProductsPage />
+          {/* <ProductsList status="active" /> */}
+        </Route>
+        <Route path="/products/published">
+          <ProductsPage />
+          {/* <ProductsList status="published" /> */}
+        </Route>
+        <Route path="/products/unpublished">
+          <ProductsPage />
+          {/* <ProductsList status="unpublished" /> */}
+        </Route>
+        <Route path="/products/inactive">
+          <ProductsPage />
+          {/* <ProductsList status="inactive" /> */}
+        </Route>
+        <Route path="/products/add">
+          <ProductsPage />
+          {/* <AddProduct /> */}
+        </Route>
+        <Route path="/products/:pid">
+          <ProductsPage />
+          {/* <UpdateProduct /> */}
+        </Route>
+        <Route path="/services">
+          <ServicesPage />
+        </Route>
+        <Route path="/resources">
+          <ResourcesPage />
+        </Route>
+        <Route path="/resources/webinars">
+          <ResourcesPage />
+          {/* <Webinars/> */}
+        </Route>
+        <Route path="/resources/training">
+          <ResourcesPage />
+          {/* <Training/> */}
+        </Route>
+        <Route path="/resources/support">
+          <ResourcesPage />
+          {/* <Support/> */}
+        </Route>
+        <Route path="/plans">
+          <PlansPage />
+        </Route>
+        <Route path="/about">
+          <AboutPage />
+        </Route>
+        <Redirect to="/products" />
+      </Switch>
+    );
+  } else {
+    routes = (
+      <Switch>
+        <Route path="/" exact>
+          <Redirect to="/home" />
+        </Route>
+        <Route path="/home" exact>
+          <HomePage />
+        </Route>
+        <Route path="/services">
+          <ServicesPage />
+        </Route>
+        <Route path="/resources">
+          <ResourcesPage />
+        </Route>
+        <Route path="/resources/webinars">
+          <ResourcesPage />
+          {/* <Webinars/> */}
+        </Route>
+        <Route path="/resources/training">
+          <ResourcesPage />
+          {/* <Training/> */}
+        </Route>
+        <Route path="/resources/support">
+          <ResourcesPage />
+          {/* <Support/> */}
+        </Route>
+        <Route path="/plans">
+          <PlansPage />
+        </Route>
+        <Route path="/about">
+          <AboutPage />
+        </Route>
+        <Redirect to="/products" />
+      </Switch>
+    );
+  }
 
   return (
     <Router>
