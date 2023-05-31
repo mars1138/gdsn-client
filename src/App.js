@@ -14,6 +14,7 @@ import PlansPage from './plans/PlansPage';
 import ProductsPage from './products/ProductsPage';
 import AboutPage from './about/AboutPage';
 import MainHeader from './shared/Navigation/MainHeader';
+import Footer from './shared/components/footer/Footer';
 
 function App() {
   useEffect(() => {}, []);
@@ -48,6 +49,7 @@ function App() {
     <Router>
       <MainHeader />
       <main>{routes}</main>
+      <Footer />
     </Router>
   );
 }

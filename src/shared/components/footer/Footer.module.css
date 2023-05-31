@@ -1,0 +1,51 @@
+.footer {
+  width: 100%;
+  background-color: var(--primary);
+  margin: 0 auto;
+  padding: 5rem 0;
+  color: var(--white-3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  letter-spacing: 1.5px;
+}
+
+.footer * {
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  height: 4rem;
+}
+
+.footer ul {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  font-size: 1.25rem;
+}
+
+.footer li {
+  width: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.footerIcons {
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ion {
+  color: var(--white-3);
+}
+
+.footer span {
+  margin: 0.5rem 0;
+}
