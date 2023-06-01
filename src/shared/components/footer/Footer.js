@@ -49,7 +49,7 @@ const Footer = () => {
           src="/mail-outline.svg"
         ></ion-icon>
       </div>
-      <span>&copy; Copywright 2022 GDSN+</span>
+      <span>&copy; Copywright 2002 GDSN+</span>
     </footer>
   );
 };

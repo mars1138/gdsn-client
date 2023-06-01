@@ -1,0 +1,28 @@
+.content {
+  padding: 2rem;
+  width: 40%;
+  color: var(--white-1);
+  background: var(--secondary-light-tr);
+  border-radius: var(--borderRadius-card);
+}
+
+.left {
+  margin-right: auto;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.right {
+  margin-left: auto;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.6rem;
+}

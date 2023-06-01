@@ -5,7 +5,7 @@ import NavLinks from './NavLinks';
 import Logo from './Logo';
 import classes from './MainHeader.module.css';
 
-const MainHeader = () => {
+const MainHeader = (props) => {
   return (
     <React.Fragment>
       <header className={classes.header}>

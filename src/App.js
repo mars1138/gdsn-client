@@ -65,7 +65,7 @@ function App() {
         <Route path="/services">
           <ServicesPage />
         </Route>
-        <Route path="/resources">
+        <Route path="/resources" exact>
           <ResourcesPage />
         </Route>
         <Route path="/resources/webinars">
@@ -101,20 +101,17 @@ function App() {
         <Route path="/services">
           <ServicesPage />
         </Route>
-        <Route path="/resources">
+        <Route path="/resources" exact>
           <ResourcesPage />
         </Route>
         <Route path="/resources/webinars">
           <ResourcesPage />
-          {/* <Webinars/> */}
         </Route>
         <Route path="/resources/training">
           <ResourcesPage />
-          {/* <Training/> */}
         </Route>
         <Route path="/resources/support">
           <ResourcesPage />
-          {/* <Support/> */}
         </Route>
         <Route path="/plans">
           <PlansPage />
@@ -122,7 +119,7 @@ function App() {
         <Route path="/about">
           <AboutPage />
         </Route>
-        <Redirect to="/products" />
+        {/* <Redirect to="/home" /> */}
       </Switch>
     );
   }

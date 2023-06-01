@@ -12,7 +12,7 @@ import classes from './NavLinks.module.css';
 const NavLinks = () => {
   const menuLinks = [];
   const isAuth = false;
-//   const isAuth = true;
+  //   const isAuth = true;
   // const isAuth = useSelector(state=> state.auth.isAuthenticated);
   //   const dispatch = useDispatch();
   const history = useHistory();
@@ -31,20 +31,22 @@ const NavLinks = () => {
     history.push('/');
   };
 
-  isAuth ? setMenu(navMenuData) : setMenu(navMenuDataLoggedOut);
+  setMenu(isAuth ? navMenuData : navMenuDataLoggedOut);
 
   return (
-    <nav className={classes['nav-container']}>
-      <ul className={classes['nav-links']}>{menuLinks}</ul>
-      <div className={classes.button}>
-        {!isAuth && <Button to="/auth">Login</Button>}
-        {isAuth && (
-          <Button onClick={logoutHandler} inverse>
-            Logout
-          </Button>
-        )}
-      </div>
-    </nav>
+    <React.Fragment>
+      <nav className={classes['nav-container']}>
+        <ul className={classes['nav-links']}>{menuLinks}</ul>
+        <div className={classes.button}>
+          {!isAuth && <Button to="/auth">Login</Button>}
+          {isAuth && (
+            <Button onClick={logoutHandler} inverse>
+              Logout
+            </Button>
+          )}
+        </div>
+      </nav>
+    </React.Fragment>
   );
 };
 

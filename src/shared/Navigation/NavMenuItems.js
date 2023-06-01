@@ -23,8 +23,8 @@ const NavMenuItems = (props) => {
     document.addEventListener('touchstart', handler);
 
     return () => {
-      document.addEventListener('mousedown', handler);
-      document.addEventListener('touchstart', handler);
+      document.removeEventListener('mousedown', handler);
+      document.removeEventListener('touchstart', handler);
     };
   }, [dropdown]);
 
@@ -38,6 +38,8 @@ const NavMenuItems = (props) => {
     dropdown && setDropdown(false);
   };
 
+  console.log('items: ', items);
+
   return (
     <li
       className={classes['menu-items']}
@@ -46,7 +48,7 @@ const NavMenuItems = (props) => {
       onMouseLeave={mouseLeaveHandler}
       onClick={closeDropdownHandler}
     >
-      {items.submenu && items.url && (
+      {items.url && items.submenu && (
         <>
           <button
             type="button"
