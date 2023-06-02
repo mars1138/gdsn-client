@@ -9,3 +9,30 @@
   border-radius: var(--borderRadius-card);
   box-shadow: var(--shadow);
 }
+
+.home {
+  background-image: url('../../../assets/media/home/pexels-fauxels-3183197-min.jpg');
+  background-position-y: 30%;
+}
+.products {
+  background-image: url('../../../assets/media/products/pexels-tiger-lily-4483775-min.jpg');
+  background-position-y: 63%;
+}
+.services {
+  background-image: url('../../../assets/media/services/pexels-photomix-company-106344-min.jpg');
+}
+.resources {
+  background-image: url('../../../assets/media/resources/nana-smirnova-IEiAmhXehwE-unsplash-min.jpg');
+}
+.support {
+  background-image: url('../../../assets/media/resources/support/pexels-panumas-nikhomkhai-1148820-min.jpg');
+  background-position-y: 20%;
+}
+.plans {
+  background-image: url('../../../assets/media/plans/pexels-fauxels-3183153-min.jpg');
+  background-position-y: 20%;
+}
+.about {
+  background-image: url('../../../assets/media/about/pexels-andrea-piacquadio-789822-min.jpg');
+  background-position-y: 50%;
+}

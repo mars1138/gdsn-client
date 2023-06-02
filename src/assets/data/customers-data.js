@@ -1,0 +1,17 @@
+export const customers = [
+  { id: 111111234, name: 'Amazon' },
+  { id: 111111235, name: 'Walmart' },
+  { id: 111111236, name: 'Kroger' },
+  { id: 111111237, name: 'Safeway' },
+  { id: 111111238, name: 'Albertsons' },
+  { id: 111111239, name: 'Target' },
+  { id: 111111240, name: 'Best Buy' },
+  { id: 111111241, name: 'Fred Meyer' },
+  { id: 111111242, name: 'Video Only' },
+  { id: 111111243, name: 'Office Depot' },
+  { id: 111111244, name: 'Staples' },
+  { id: 111111245, name: 'Costco' },
+  { id: 111111246, name: "Sams's Club" },
+  { id: 111111247, name: 'Frys' },
+  { id: 111111248, name: 'QFC' },
+];
