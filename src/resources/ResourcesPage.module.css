@@ -1,0 +1,29 @@
+.resources-cards {
+  width: 70%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.resources-cards a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.resources-cards a * {
+  transition: all 0.2s;
+}
+
+.resources-cards a:hover div {
+  background: var(--secondary-light);
+}
+
+.resources-cards a:hover h3 {
+  color: var(--white-3);
+}
+
+.resources-cards a h3 {
+  text-align: center;
+  text-transform: uppercase;
+}
