@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  padding: 2.5rem 3rem;
+  font-size: 1.5rem;
+  display: none;
+}
+
+.active {
+  display: flex;
+  animation: fadeIn 1s;
+}
+
+.image {
+  width: 35%;
+  height: 100%;
+}
+
+.image img {
+  width: 100%;
+  border-radius: var(--borderRadius-img);
+}
+
+.content {
+  width: 65%;
+  padding: 0 0 0 3rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

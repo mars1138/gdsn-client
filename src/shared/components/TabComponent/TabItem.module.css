@@ -1,0 +1,21 @@
+.tab {
+  display: flex;
+  margin: 0 0.75rem;
+  padding: 1rem 1.5rem;
+  border-radius: var(--borderRadius-button);
+  background: var(--secondary-light-2);
+  color: white;
+  transform: translateY(40%);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background: var(--primary);
+}
+
+.active {
+  background: var(--primary);
+  display: block;
+  transform: translateY(23%);
+}
