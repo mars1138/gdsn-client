@@ -9,7 +9,8 @@ import classes from './HomePage.module.css';
 import { homeHero as heroData } from '../assets/data/heroData';
 import { homeTabs as tabs } from '../assets/data/tabData';
 import { homeCards as cards } from '../assets/data/cardData';
-import { homeSlider1 as slider } from '../assets/data/sliderData';
+import { homeSlider1 as slider1 } from '../assets/data/sliderData';
+import { homeSlider2 as slider2 } from '../assets/data/sliderData';
 
 const HomePage = () => {
   const { title, text } = heroData;
@@ -38,7 +39,11 @@ const HomePage = () => {
       </Section>
       <Section trigger="0.1">
         <h2>Services That Fit Your Company's Needs</h2>
-        <Slider type="description" content={slider} />
+        <Slider type="description" content={slider1} />
+      </Section>
+      <Section>
+        <h2>Valued By Industry Leaders</h2>
+        <Slider type="testimonial" content={slider2} />
       </Section>
     </React.Fragment>
   );
