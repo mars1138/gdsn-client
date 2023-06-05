@@ -1,0 +1,69 @@
+.plan {
+  width: 30%;
+}
+
+.plan > div {
+  height: 98%;
+}
+
+.plan > *:hover {
+  border: 1px solid var(--primary-light);
+}
+
+.plan-info {
+  padding-bottom: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plan-info h2 {
+  display: block;
+  color: var(--white-3);
+  background-color: var(--secondary);
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.plan-image {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.plan-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.plan-list {
+  margin-bottom: 3rem;
+  list-style-type: none;
+  font-size: 1.4rem;
+}
+
+.plan-list li {
+  display: flex;
+  justify-content: center;
+  margin: 1.25rem 0;
+}
+
+.plan-icon {
+    width: 10%;
+    padding-top: .25rem;
+}
+
+.plan-icon ion-icon {
+    color: var(--secondary);
+  }
+
+  .plan-detail {
+      width: 85%;
+      text-align: left;
+  }

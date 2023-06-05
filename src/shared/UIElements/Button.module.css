@@ -14,7 +14,7 @@
   cursor: pointer;
 }
 
-.button hover {
+.button:hover {
   background: var(--primary-light);
   border: 1px solid var(--primary-light);
   box-shadow: var(--button-shadow-hover);
@@ -63,12 +63,10 @@
 
 .go {
   background-color: var(--green-1);
-  /* color: var(--red-2); */
   border: 1px solid var(--green-1);
 }
 .go:hover {
   background-color: var(--green-1);
-  /* color: var(--red-2); */
   border: 1px solid var(--green-1);
 }
 
