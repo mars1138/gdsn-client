@@ -1,0 +1,22 @@
+.contact {
+  padding-top: 8rem;
+  border: 1px solid blue;
+}
+.container {
+  position: relative;
+  width: 100%;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid green;
+}
+
+.submitting {
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 600px) {
+  .contact {
+    flex-direction: column;
+  }
+}

@@ -5,6 +5,7 @@ import Hero from '../shared/components/layout/Hero';
 import TabComponent from '../shared/components/TabComponent/TabComponent';
 import Card from '../shared/UIElements/Card';
 import Slider from '../shared/components/Slider/Slider';
+import Contact from '../shared/components/contact/Contact';
 import classes from './AboutPage.module.css';
 import { aboutHero as heroData } from '../assets/data/heroData';
 import { aboutTabs as tabs } from '../assets/data/tabData';
@@ -34,6 +35,9 @@ const AboutPage = () => {
       </Section>
       <Section>
         <TabComponent>{tabs}</TabComponent>
+      </Section>
+      <Section>
+        <Contact/>
       </Section>
       <Section>
         <Slider type="gallery" content={slider} />

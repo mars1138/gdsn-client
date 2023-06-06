@@ -1,0 +1,42 @@
+.contact-text-container {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-text {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+}
+
+.contact-text p {
+  margin: 1rem 0 0 0;
+}
+
+@media only screen and (max-width: 715px) {
+  .contact-text-container {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact-text-container {
+    width: 90%;
+    margin: 0 auto 5rem auto;
+  }
+
+  .contact-text {
+    margin: 0 auto 5rem auto;
+  }
+
+  .contact-text h3 {
+    font-size: 23px;
+  }
+  .contact-text p {
+    font-size: 18px;
+  }
+}

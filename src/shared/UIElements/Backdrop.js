@@ -9,3 +9,5 @@ const Backdrop = (props) => {
     document.getElementById('backdrop-hook')
   );
 };
+
+export default Backdrop;
