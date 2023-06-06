@@ -11,6 +11,7 @@ import { homeTabs as tabs } from '../assets/data/tabData';
 import { homeCards as cards } from '../assets/data/cardData';
 import { homeSlider1 as slider1 } from '../assets/data/sliderData';
 import { homeSlider2 as slider2 } from '../assets/data/sliderData';
+import video from '../assets/pexels-rodnae-productions-7947451.mp4';
 
 const HomePage = () => {
   const { title, text } = heroData;
@@ -44,6 +45,18 @@ const HomePage = () => {
       <Section>
         <h2>Valued By Industry Leaders</h2>
         <Slider type="testimonial" content={slider2} />
+      </Section>
+      <Section>
+        <video
+          width="640"
+          height="360"
+          src={video}
+          type="/video/mp4"
+          muted
+          controls
+        >
+          Your browser does not support the video tag.
+        </video>
       </Section>
     </React.Fragment>
   );

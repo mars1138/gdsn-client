@@ -9,6 +9,7 @@ import classes from './ResourcesPage.module.css';
 import { resourcesHero as heroData } from '../assets/data/heroData';
 import { resourcesTabs as tabs } from '../assets/data/tabData';
 import { resourcesCards as cards } from '../assets/data/cardData';
+import video from '../assets/pexels-rodnae-productions-7947451.mp4';
 
 const ResourcesPage = () => {
   const { title, text } = heroData;
@@ -34,6 +35,18 @@ const ResourcesPage = () => {
       </Section>
       <Section>
         <TabComponent>{tabs}</TabComponent>
+      </Section>
+      <Section>
+        <video
+          width="640"
+          height="360"
+          src={video}
+          type="/video/mp4"
+          muted
+          controls
+        >
+          Your browser does not support the video tag.
+        </video>
       </Section>
     </React.Fragment>
   );
