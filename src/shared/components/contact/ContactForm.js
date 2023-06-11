@@ -4,14 +4,33 @@ import { useHistory } from 'react-router-dom';
 import Modal from '../../UIElements/Modal';
 import Button from '../../UIElements/Button';
 import LoadingSpinner from '../../UIElements/LoadingSpinner';
+import classes from './ContactForm.module.css';
 
-const ContactForm = () => {
+const ContactForm = (props) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [didSubmit, setDidSubmit] = useState(false);
   const [error, setError] = useState();
 
   const history = useHistory();
-  const submitMessage = 'Form submitted, we will contact you shortly!';
+
+  const submitMessage = 'Form is submitted.  We will contact you shortly!';
+  const formClasses = `${classes['contact-form']} ${
+    isSubmitting ? classes.submitting : ''
+  }`;
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    props.toggleSubmitting();
+    setIsSubmitting(true);
+
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setDidSubmit(true);
+      props.toggleSubmitting();
+      history.push('/about');
+    }, 1500);
+  };
 
   const errorHandler = () => {
     setError(null);
@@ -19,7 +38,7 @@ const ContactForm = () => {
 
   const resetSubmitHandler = () => {
     setDidSubmit(false);
-    history.push('/');
+    // history.push('/');
   };
 
   return (
@@ -38,8 +57,9 @@ const ContactForm = () => {
           {submitMessage}
         </Modal>
       )}
-      <div>
-        <form>
+      <div className={classes['form-container']}>
+        {isSubmitting && <LoadingSpinner />}
+        <form className={formClasses} onSubmit={submitHandler}>
           <Button>Submit</Button>
         </form>
       </div>

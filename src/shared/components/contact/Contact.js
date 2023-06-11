@@ -5,17 +5,21 @@ import ContactText from './ContactText';
 import classes from './Contact.module.css';
 
 const Contact = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formSubmitting, setFormSubmitting] = useState(false);
 
   const contactClasses = `${classes.container} ${
-    isSubmitting ? classes.submitting : ''
+    formSubmitting ? classes.submitting : ''
   }`;
+
+  const setSubmittingHandler = () => {
+    setFormSubmitting((prev) => !prev);
+  };
 
   return (
     <div id="contact-form" className={classes.contact}>
       <h2>Contact us today for more information!</h2>
       <div className={contactClasses}>
-        <ContactForm />
+        <ContactForm toggleSubmitting={setSubmittingHandler} />
         <ContactText />
       </div>
     </div>
