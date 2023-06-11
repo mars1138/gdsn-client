@@ -18,7 +18,7 @@ import ProductsPage from './products/ProductsPage';
 import AboutPage from './about/AboutPage';
 import MainHeader from './shared/Navigation/MainHeader';
 import Footer from './shared/components/footer/Footer';
-
+import Auth from './user/Auth';
 import ScrollToTop from './shared/utilities/ScrollToTop';
 
 function App() {
@@ -87,7 +87,10 @@ function App() {
         <Route path="/about">
           <AboutPage />
         </Route>
-        <Redirect to="/products" />
+        <Route path="/auth">
+          <Auth/>
+        </Route>
+        <Redirect to="/" />
       </Switch>
     );
   } else {
