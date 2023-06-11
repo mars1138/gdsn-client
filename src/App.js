@@ -15,10 +15,11 @@ import ProductsPage from './products/ProductsPage';
 // import ProductsList from './products/ProductsList';
 // import AddProduct from './products/AddProduct';
 // import UpdateProduct from './products/UpdateProduct';
-
 import AboutPage from './about/AboutPage';
 import MainHeader from './shared/Navigation/MainHeader';
 import Footer from './shared/components/footer/Footer';
+
+import ScrollToTop from './shared/utilities/ScrollToTop';
 
 function App() {
   const isAuth = false;
@@ -119,7 +120,7 @@ function App() {
         <Route path="/about">
           <AboutPage />
         </Route>
-        {/* <Redirect to="/home" /> */}
+        <Redirect to="/home" />
       </Switch>
     );
   }
@@ -127,7 +128,9 @@ function App() {
   return (
     <Router>
       <MainHeader />
-      <main>{routes}</main>
+      <main>
+        <ScrollToTop>{routes}</ScrollToTop>
+      </main>
       <Footer />
     </Router>
   );

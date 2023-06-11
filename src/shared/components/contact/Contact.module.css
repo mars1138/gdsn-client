@@ -1,6 +1,5 @@
 .contact {
   padding-top: 8rem;
-  border: 1px solid blue;
 }
 .container {
   position: relative;
@@ -8,12 +7,10 @@
   margin-top: 5rem;
   display: flex;
   justify-content: space-evenly;
-  border: 1px solid green;
 }
 
 .submitting {
   opacity: 0.5;
-  background-color: aqua;
 }
 
 @media only screen and (max-width: 600px) {

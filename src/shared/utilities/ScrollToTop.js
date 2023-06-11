@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router';
 
-const ScrollToTop = () => {
-  const { hash } = useLocation();
+const ScrollToTop = (props) => {
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
     if (hash === '') {
@@ -18,9 +18,9 @@ const ScrollToTop = () => {
         }
       }, 50);
     }
-  }, [hash]);
+  }, [pathname, hash]);
 
-  return <React.Fragment>{ProductsPage.children}</React.Fragment>;
+  return <React.Fragment>{props.children}</React.Fragment>;
 };
 
 export default ScrollToTop;

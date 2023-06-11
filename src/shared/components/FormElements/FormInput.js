@@ -18,11 +18,13 @@ const inputReducer = (state, action) => {
         ...state,
         isTouched: true,
       };
+    default:
+      return state;
   }
 };
 
 const FormInput = (props) => {
-  const [inputState, dispatch] = useReducer(null, {
+  const [inputState, dispatch] = useReducer(inputReducer, {
     value: props.initialValue || '',
     isTouched: false,
     isValid: props.initialValid || false,
@@ -30,7 +32,7 @@ const FormInput = (props) => {
 
   const { id, onInput } = props;
   const { value, isValid } = inputState;
-  const disabled = `${props.edit ? classes.disabled : ''}`;
+  const disabledClass = `${props.edit ? classes.disabled : ''}`;
 
   let element;
 
