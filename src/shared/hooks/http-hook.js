@@ -8,26 +8,28 @@ export const useHttpClient = () => {
   const sendRequest = useCallback(
     async (url, method = 'GET', body = null, headers = {}) => {
       setIsSubmitting(true);
-      // const httpAbortCtrl = new AbortController();
-      // activeHttpRequests.current.push(httpAbortCtrl);
+      const httpAbortCtrl = new AbortController();
+      activeHttpRequests.current.push(httpAbortCtrl);
 
       try {
         const response = await fetch(url, {
           method,
           body,
           headers,
-          //   signal: httpAbortCtrl.signal,
+          signal: httpAbortCtrl.signal,
         });
 
         const responseData = await response.json();
         console.log(responseData);
 
-        // activeHttpRequests.current = activeHttpRequests.current.filter(
-        //     (reqCtrl) => reqCtrl !== httpAbortCtrl
-        //   );
+        activeHttpRequests.current = activeHttpRequests.current.filter(
+          (reqCtrl) => reqCtrl !== httpAbortCtrl
+        );
 
-        if (!response.ok) throw new Error(responseData.message);
-
+        if (!response.ok) {
+          console.log('Http Error!');
+          throw new Error(responseData.message);
+        }
         setIsSubmitting(false);
         return responseData;
       } catch (err) {
@@ -43,12 +45,12 @@ export const useHttpClient = () => {
     setError(undefined);
   };
 
-  // abort any active http requests if leaving current page
+  //   abort any active http requests if leaving current page
   useEffect(() => {
     return () => {
       activeHttpRequests.current.forEach((abortCtrl) => abortCtrl.abort());
     };
   }, []);
-};
 
-return { isSubmitting, error, sendRequest, clearError };
+  return { isSubmitting, error, sendRequest, clearError };
+};

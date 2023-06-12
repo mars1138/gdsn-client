@@ -2,7 +2,7 @@ import React from 'react';
 
 import Section from '../shared/components/layout/Section';
 import Hero from '../shared/components/layout/Hero';
-import classes from './ProductsPage.module.css';
+// import classes from './ProductsPage.module.css';
 import { productsHero as heroData } from '../assets/data/heroData';
 
 const ProductsPage = () => {

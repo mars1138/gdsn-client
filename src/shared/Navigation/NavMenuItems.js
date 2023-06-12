@@ -38,8 +38,6 @@ const NavMenuItems = (props) => {
     dropdown && setDropdown(false);
   };
 
-  console.log('items: ', items);
-
   return (
     <li
       className={classes['menu-items']}

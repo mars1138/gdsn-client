@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import Modal from '../../UIElements/Modal';
 import LoadingSpinner from '../../UIElements/LoadingSpinner';
 import Button from '../../UIElements/Button';
+import { useHttpClient } from '../../hooks/http-hook';
 import { useForm } from '../../hooks/form-hook';
 import FormInput from '../FormElements/FormInput';
 import {
@@ -15,9 +16,8 @@ import {
 import classes from './ContactForm.module.css';
 
 const ContactForm = (props) => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { isSubmitting, error, sendRequest, clearError } = useHttpClient();
   const [didSubmit, setDidSubmit] = useState(false);
-  const [error, setError] = useState();
 
   const [formState, inputHandler] = useForm(
     {
@@ -52,33 +52,56 @@ const ContactForm = (props) => {
     isSubmitting ? classes.submitting : ''
   }`;
 
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
 
     props.toggleSubmitting();
-    setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const responseData = await sendRequest(
+        `${process.env.REACT_APP_BACKEND_URL}/api/contact`,
+        'POST',
+        JSON.stringify({
+          name: formState.inputs.name.value,
+          company: formState.inputs.name.value,
+          email: formState.inputs.email.value,
+          phone: formState.inputs.phone.value,
+          comments: formState.inputs.comments.value,
+        }),
+        { 'Content-Type': 'application/json' }
+      );
+
+      console.log(responseData);
+
+      if (!responseData) {
+        props.toggleSubmitting();
+        clearError();
+        history.push('/');
+        throw new Error(responseData.message);
+      }
+
       setDidSubmit(true);
-      props.toggleSubmitting();
-      history.push('/about');
-    }, 1500);
-  };
-
-  const errorHandler = () => {
-    setError(null);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const resetSubmitHandler = () => {
     setDidSubmit(false);
-    history.push('/');
+    history.push('/services');
   };
 
   return (
     <React.Fragment>
       {error && (
-        <Modal msgHeader="Error!" show={error} onClear={errorHandler}>
+        <Modal
+          msgHeader="Error!"
+          show={error}
+          onClear={() => {
+            clearError();
+            props.toggleSubmitting();
+          }}
+        >
           {error}
         </Modal>
       )}
