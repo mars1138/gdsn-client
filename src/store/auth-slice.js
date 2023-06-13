@@ -35,7 +35,9 @@ const authSlice = createSlice({
     Logout(state, action) {
       console.log('logging out...');
       state.isAuthenticated = false;
-      (state.userId = null), (state.token = null), (state.expireDate = null);
+      state.userId = null;
+      state.token = null;
+      state.expireDate = null;
       localStorage.removeItem('userData');
     },
   },

@@ -1,0 +1,28 @@
+.auth-container {
+  width: 70%;
+  min-height: 30vh;
+  margin: 10% auto;
+  display: flex;
+  justify-content: center;
+}
+
+.auth-container form {
+  width: 100%;
+}
+
+.auth-container button {
+  margin-top: 12%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mode {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+.mode:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
