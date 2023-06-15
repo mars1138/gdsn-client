@@ -1,20 +1,20 @@
 import React from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import Button from '../UIElements/Button';
 import NavMenuItems from './NavMenuItems';
 import { navMenuData, navMenuDataLoggedOut } from './navMenuData';
 
-// import {authActions } from '../../store/auth-slice';
+import { authActions } from '../../store/auth-slice';
 import classes from './NavLinks.module.css';
 
 const NavLinks = () => {
   const menuLinks = [];
-  const isAuth = false;
+  // const isAuth = false;
   //   const isAuth = true;
-  // const isAuth = useSelector(state=> state.auth.isAuthenticated);
-  //   const dispatch = useDispatch();
+  const isAuth = useSelector((state) => state.auth.isAuthenticated);
+  const dispatch = useDispatch();
   const history = useHistory();
 
   const setMenu = (menuData) => {
@@ -27,8 +27,8 @@ const NavLinks = () => {
   };
 
   const logoutHandler = (event) => {
-    //   dispatchEvent(authActions.logout());
-    history.push('/');
+    dispatch(authActions.logout());
+    history.push('/auth');
   };
 
   setMenu(isAuth ? navMenuData : navMenuDataLoggedOut);

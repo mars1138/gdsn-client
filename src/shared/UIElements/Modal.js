@@ -29,7 +29,7 @@ const Modal = (props) => {
   return (
     <React.Fragment>
       {props.show && <Backdrop onClick={props.onClear} />}
-      <ModalOverlay {...props} />
+      {props.show && <ModalOverlay {...props} />}
     </React.Fragment>
   );
 };

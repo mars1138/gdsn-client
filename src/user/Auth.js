@@ -39,7 +39,7 @@ const Auth = () => {
   );
 
   if (isAuth) {
-    dispatch(authActions.Logout());
+    dispatch(authActions.logout());
     history.push('/auth');
   }
 
@@ -94,13 +94,12 @@ const Auth = () => {
         console.log('loginResponse: ', res);
 
         dispatch(
-          authActions.Login({
+          authActions.login({
             user: res.userData.userId,
             token: res.userData.token,
           })
         );
-
-        history.push('/products');
+        history.push('/services');
       } catch (err) {
         console.log(err);
       }
@@ -123,12 +122,12 @@ const Auth = () => {
         console.log('SignupResponse: ', res);
 
         dispatch(
-          authActions.Login({
+          authActions.login({
             user: res.userData.userId,
             token: res.userData.token,
           })
         );
-        history.push('/products');
+        history.push('/services');
       } catch (err) {
         console.log(err);
       }

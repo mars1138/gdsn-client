@@ -11,7 +11,7 @@ const authSlice = createSlice({
   name: 'authentication',
   initialState: initialAuth,
   reducers: {
-    Login(state, action) {
+    login(state, action) {
       console.log('action.payload: ', action.payload);
       const { user, token, expireDate } = action.payload;
 
@@ -32,7 +32,7 @@ const authSlice = createSlice({
         })
       );
     },
-    Logout(state, action) {
+    logout(state) {
       console.log('logging out...');
       state.isAuthenticated = false;
       state.userId = null;

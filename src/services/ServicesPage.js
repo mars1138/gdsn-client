@@ -12,6 +12,7 @@ import { servicesSlider2 as slider2 } from '../assets/data/sliderData';
 
 const ServicesPage = () => {
   const { title, text } = heroData;
+  console.log('services loading...');
   return (
     <React.Fragment>
       <Section>

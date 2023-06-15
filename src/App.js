@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   BrowserRouter as Router,
   Route,
@@ -20,11 +20,40 @@ import MainHeader from './shared/Navigation/MainHeader';
 import Footer from './shared/components/footer/Footer';
 import Auth from './user/Auth';
 import ScrollToTop from './shared/utilities/ScrollToTop';
+// import { useHttpClient } from './shared/hooks/http-hook';
+import { authActions } from './store/auth-slice';
+// import { fetchCatalog } from './store/catalog-functions';
+
+let logoutTimer;
 
 function App() {
-  const isAuth = false;
+  // const isAuth = false;
+  const isAuth = useSelector((state) => state.auth.isAuthenticated);
+  const authUserId = useSelector((state) => state.auth.userId);
+  const authToken = useSelector((state) => state.auth.token);
+  const authExpire = useSelector((state) => state.auth.expireDate);
+
+  const dispatch = useDispatch();
+  // const { sendRequest } = useHttpClient();
+
   let routes;
 
+  // set auto logout timer according expire date/time
+  useEffect(() => {
+    if (authToken !== null && authExpire !== null) {
+      const remainingTime = authExpire - new Date().getTime();
+
+      logoutTimer = setTimeout(() => {
+        dispatch(authActions.logout());
+      }, remainingTime);
+
+      // dispatch(fetchCatalog(authUserId, authToken));
+    } else {
+      clearTimeout(logoutTimer);
+    }
+  }, [authUserId, authExpire, authToken, dispatch]);
+
+  // login user if user data in local storage
   useEffect(() => {}, []);
 
   if (isAuth) {
@@ -87,10 +116,7 @@ function App() {
         <Route path="/about">
           <AboutPage />
         </Route>
-        <Route path="/auth">
-          <Auth/>
-        </Route>
-        <Redirect to="/" />
+        {/* <Redirect to="/" /> */}
       </Switch>
     );
   } else {
@@ -123,7 +149,10 @@ function App() {
         <Route path="/about">
           <AboutPage />
         </Route>
-        <Redirect to="/home" />
+        <Route path="/auth">
+          <Auth />
+        </Route>
+        <Redirect to="/auth" />
       </Switch>
     );
   }
