@@ -1,0 +1,27 @@
+.title {
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+  }
+  
+  .content {
+    height: 175px;
+    display: flex;
+  }
+  
+  .image {
+    width: 35%;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .text {
+    width: 65%;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+  }

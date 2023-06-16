@@ -22,6 +22,12 @@ export const resourcesHero = {
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
 };
 
+export const supportHero = {
+  title: 'Support',
+  text:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+};
+
 export const plansHero = {
   title: 'Pricing Plans For Your Needs',
   text:

@@ -12,6 +12,14 @@ import servicesImg4 from '../media/services/online-education-gae6d1ed66_640-min.
 import resourcesImg1 from '../media/resources/niklas-ohlrogge-uu0cOMPdM2g-unsplash-min.jpg';
 import resourcesImg2 from '../media/resources/monitor-gbe11283c1_640-min.jpg';
 import resourcesImg3 from '../media/resources/chuttersnap-Q_KdjKxntH8-unsplash-min.jpg';
+import prodImg1 from '../media/products/markus-winkler-afW1hht0NSs-unsplash-min.jpg';
+import prodImg2 from '../media/products/pexels-pixabay-163064-min.jpg';
+import prodImg3 from '../media/products/markus-winkler-7EwWeNyzSwQ-unsplash-min.jpg';
+import prodImg4 from '../media/products/absolutvision-82TpEld0_e4-unsplash-min.jpg';
+import prodImg5 from '../media/products/pexels-miguel-á-padriñán-2882553.jpg';
+import support1 from '../media/resources/support/pexels-mikhail-nilov-7682103-min.jpg';
+import support2 from '../media/resources/support/firos-nv-1wBmbnvv4TE-unsplash-min.jpg';
+import support3 from '../media/resources/support/pexels-mart-production-7709175-min.jpg';
 
 export const homeTabs = [
   {
@@ -75,6 +83,33 @@ export const aboutTabs = [
   },
 ];
 
+export const resourcesTabs = [
+  {
+    id: 1,
+    title: 'Content Library',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    heading: 'Extensive Resources Available',
+    imgUrl: resourcesImg1,
+  },
+  {
+    id: 2,
+    title: 'News',
+    content:
+      'Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    heading: 'Stay Current On Recent News',
+    imgUrl: resourcesImg2,
+  },
+  {
+    id: 3,
+    title: 'Events',
+    content:
+      'Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    heading: 'Annual Events',
+    imgUrl: resourcesImg3,
+  },
+];
+
 export const servicesTabs = [
   {
     id: 1,
@@ -110,29 +145,107 @@ export const servicesTabs = [
   },
 ];
 
-export const resourcesTabs = [
+export const productsTabs = [
   {
     id: 1,
-    title: 'Content Library',
+    tabTitle: 'Edit',
     content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    heading: 'Extensive Resources Available',
-    imgUrl: resourcesImg1,
+      'Update the attributes of your product item.  Name, Product Description, Global Product Category Code, and Image are required attributes.  Global Trade Identification Number (GTIN) & Product Type cannot be edited.  If you wish to change either of these, you must create a new product with an entirely new GTIN',
+    contentHeading: '',
+    imgUrl: prodImg1,
   },
   {
     id: 2,
-    title: 'News',
+    tabTitle: 'Publish',
     content:
-      'Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    heading: 'Stay Current On Recent News',
-    imgUrl: resourcesImg2,
+      'Select a customer/subscriber who wishes to start receiving product data.  Click on Publish at the confirmation window to complete the action.',
+    contentHeading: '',
+    imgUrl: prodImg2,
   },
   {
     id: 3,
-    title: 'Events',
+    tabTitle: 'Deactivate',
     content:
-      'Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    heading: 'Annual Events',
-    imgUrl: resourcesImg3,
+      'Choose this action to render the catalog item inactive.  You can reactivate the product if you wish to make it available to customers again in the future.',
+    contentHeading: '',
+    imgUrl: prodImg3,
+  },
+  {
+    id: 4,
+    tabTitle: 'Reactivate',
+    content:
+      'Choose this action from the Inactive list to set a catalog item back to Active status. Doing so will make the item available for subscriptions again.',
+    contentHeading: '',
+    imgUrl: prodImg4,
+  },
+  {
+    id: 5,
+    tabTitle: 'Delete',
+    content:
+      'Choose this action to permanently remove an item from your catalog.  Once an item is deleted, it cannot be restored and must be recreated via Add New Item',
+    contentHeading: 'CAUTION---This Action is Irreversible',
+    imgUrl: prodImg5,
   },
 ];
+
+export const supportTabs = [
+  {
+    id: 1,
+    title: 'Help Desk',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    heading: "We're Here To Help!",
+    imgUrl: support1,
+  },
+  {
+    id: 2,
+    title: 'Research',
+    content:
+      'Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    heading: 'Expanding Our Horizons',
+    imgUrl: support2,
+  },
+  {
+    id: 3,
+    title: 'Community',
+    content:
+      'Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    heading: 'Engage With Other Users',
+    imgUrl: support3,
+  },
+];
+
+// export const webinarTabs = [
+//   {
+//     id: 1,
+//     tabTitle: 'Products 1',
+//     content:
+//       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+//     contentHeading: 'Tab 1 Heading',
+//     imgUrl: '/media/pexels-fauxels-3183197.jpg',
+//   },
+//   {
+//     id: 2,
+//     tabTitle: 'Products 2',
+//     content:
+//       'Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+//     contentHeading: 'Tab 2 Heading',
+//     imgUrl: '/media/pexels-fauxels-3183197.jpg',
+//   },
+//   {
+//     id: 3,
+//     tabTitle: 'Products 3',
+//     content:
+//       'Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+//     contentHeading: 'Tab 3 Heading',
+//     imgUrl: '/media/pexels-fauxels-3183197.jpg',
+//   },
+//   {
+//     id: 4,
+//     tabTitle: 'Products 4',
+//     content:
+//       'Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+//     contentHeading: 'Tab 4 Heading',
+//     imgUrl: '/media/pexels-fauxels-3183197.jpg',
+//   },
+// ];

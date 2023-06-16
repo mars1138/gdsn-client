@@ -10,6 +10,9 @@ import {
 import HomePage from './home/HomePage';
 import ServicesPage from './services/ServicesPage';
 import ResourcesPage from './resources/ResourcesPage';
+import Webinars from './resources/Webinars';
+import Training from './resources/Training';
+import Support from './resources/Support';
 import PlansPage from './plans/PlansPage';
 import ProductsPage from './products/ProductsPage';
 // import ProductsList from './products/ProductsList';
@@ -99,15 +102,13 @@ function App() {
           <ResourcesPage />
         </Route>
         <Route path="/resources/webinars">
-          <ResourcesPage />
-          {/* <Webinars/> */}
+          <Webinars />
         </Route>
         <Route path="/resources/training">
-          <ResourcesPage />
-          {/* <Training/> */}
+          <Training />
         </Route>
         <Route path="/resources/support">
-          <ResourcesPage />
+          <Support />
           {/* <Support/> */}
         </Route>
         <Route path="/plans">
@@ -135,13 +136,13 @@ function App() {
           <ResourcesPage />
         </Route>
         <Route path="/resources/webinars">
-          <ResourcesPage />
+          <Webinars />
         </Route>
         <Route path="/resources/training">
-          <ResourcesPage />
+          <Training />
         </Route>
         <Route path="/resources/support">
-          <ResourcesPage />
+          <Support />
         </Route>
         <Route path="/plans">
           <PlansPage />

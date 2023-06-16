@@ -14,7 +14,7 @@ const NavMenuItems = (props) => {
 
   useEffect(() => {
     const handler = (event) => {
-      if (dropdown && ref.current && ref.current.contains(event.target)) {
+      if (dropdown && ref.current && !ref.current.contains(event.target)) {
         setDropdown(false);
       }
     };
@@ -31,9 +31,11 @@ const NavMenuItems = (props) => {
   const mouseEnterHandler = () => {
     window.innerWidth > 768 && setDropdown(true);
   };
+
   const mouseLeaveHandler = () => {
     window.innerWidth > 768 && setDropdown(false);
   };
+
   const closeDropdownHandler = () => {
     dropdown && setDropdown(false);
   };

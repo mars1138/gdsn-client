@@ -7,7 +7,7 @@ import PlanCard from './PlanCard';
 import classes from './PlansPage.module.css';
 import { plansHero as heroData } from '../assets/data/heroData';
 import { plansSlider as slider } from '../assets/data/sliderData';
-import { planCards } from '../assets/data/plansData';
+import { planCards } from '../assets/data/cardData';
 
 const PlansPage = () => {
   const { title, text } = heroData;
