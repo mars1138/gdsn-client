@@ -10,7 +10,7 @@ export const fetchCatalog = (userId, userToken) => {
           body: null,
           headers: {
             'Content-Type': 'application-json',
-            Authorization: 'Bearer' + userToken,
+            Authorization: 'Bearer ' + userToken,
           },
         }
       );
@@ -30,6 +30,7 @@ export const fetchCatalog = (userId, userToken) => {
           products: [...catalogData] || [],
         })
       );
+      dispatch(catalogActions.setCatalogStorage());
     } catch (err) {
       console.log(err);
     }

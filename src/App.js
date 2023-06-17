@@ -25,7 +25,7 @@ import Auth from './user/Auth';
 import ScrollToTop from './shared/utilities/ScrollToTop';
 // import { useHttpClient } from './shared/hooks/http-hook';
 import { authActions } from './store/auth-slice';
-// import { fetchCatalog } from './store/catalog-functions';
+import { fetchCatalog } from './store/catalog-functions';
 
 let logoutTimer;
 
@@ -50,14 +50,33 @@ function App() {
         dispatch(authActions.logout());
       }, remainingTime);
 
-      // dispatch(fetchCatalog(authUserId, authToken));
+      dispatch(fetchCatalog(authUserId, authToken));
     } else {
       clearTimeout(logoutTimer);
     }
   }, [authUserId, authExpire, authToken, dispatch]);
 
   // login user if user data in local storage
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem('userData'));
+
+    if (
+      storedUser &&
+      storedUser.token &&
+      storedUser.expireDate &&
+      new Date(storedUser.expireDate) > new Date(1671223612525)
+    ) {
+      dispatch(
+        authActions.login({
+          user: storedUser.userId,
+          token: storedUser.token,
+          expireDate: storedUser.expireDate,
+        })
+      );
+    } else {
+      localStorage.removeItem('userData');
+    }
+  }, [dispatch]);
 
   if (isAuth) {
     routes = (

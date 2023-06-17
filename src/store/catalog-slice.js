@@ -10,7 +10,9 @@ const catalogSlice = createSlice({
     replaceCatalog(state, action) {
       state.products = action.payload.products;
     },
-    setCatalogStorage(state) {},
+    setCatalogStorage(state) {
+      localStorage.setItem('catalog', JSON.stringify(state.products));
+    },
     getCatalogStorage(state) {},
     getProduct(state, action) {},
     addProduct(state, action) {},
