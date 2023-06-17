@@ -1,5 +1,6 @@
 .section {
   padding: 50px 50px 30px 50px;
+  transition: all 0.8s;
 }
 
 .section:first-of-type {
