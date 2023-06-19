@@ -148,42 +148,42 @@ export const servicesTabs = [
 export const productsTabs = [
   {
     id: 1,
-    tabTitle: 'Edit',
+    title: 'Edit',
     content:
       'Update the attributes of your product item.  Name, Product Description, Global Product Category Code, and Image are required attributes.  Global Trade Identification Number (GTIN) & Product Type cannot be edited.  If you wish to change either of these, you must create a new product with an entirely new GTIN',
-    contentHeading: '',
+    heading: '',
     imgUrl: prodImg1,
   },
   {
     id: 2,
-    tabTitle: 'Publish',
+    title: 'Publish',
     content:
       'Select a customer/subscriber who wishes to start receiving product data.  Click on Publish at the confirmation window to complete the action.',
-    contentHeading: '',
+    heading: '',
     imgUrl: prodImg2,
   },
   {
     id: 3,
-    tabTitle: 'Deactivate',
+    title: 'Deactivate',
     content:
       'Choose this action to render the catalog item inactive.  You can reactivate the product if you wish to make it available to customers again in the future.',
-    contentHeading: '',
+    heading: '',
     imgUrl: prodImg3,
   },
   {
     id: 4,
-    tabTitle: 'Reactivate',
+    title: 'Reactivate',
     content:
       'Choose this action from the Inactive list to set a catalog item back to Active status. Doing so will make the item available for subscriptions again.',
-    contentHeading: '',
+    heading: '',
     imgUrl: prodImg4,
   },
   {
     id: 5,
-    tabTitle: 'Delete',
+    title: 'Delete',
     content:
       'Choose this action to permanently remove an item from your catalog.  Once an item is deleted, it cannot be restored and must be recreated via Add New Item',
-    contentHeading: 'CAUTION---This Action is Irreversible',
+    heading: 'CAUTION---This Action is Irreversible',
     imgUrl: prodImg5,
   },
 ];

@@ -15,9 +15,9 @@ import Training from './resources/Training';
 import Support from './resources/Support';
 import PlansPage from './plans/PlansPage';
 import ProductsPage from './products/ProductsPage';
-// import ProductsList from './products/ProductsList';
-// import AddProduct from './products/AddProduct';
-// import UpdateProduct from './products/UpdateProduct';
+import ProductsList from './products/ProductsList';
+import AddProduct from './products/AddProduct';
+import UpdateProduct from './products/UpdateProduct';
 import AboutPage from './about/AboutPage';
 import MainHeader from './shared/Navigation/MainHeader';
 import Footer from './shared/components/footer/Footer';
@@ -91,28 +91,24 @@ function App() {
           <ProductsPage />
         </Route>
         <Route path="/products/active">
-          <ProductsPage />
-          {/* <ProductsList status="active" /> */}
+          <ProductsList status="active" />
         </Route>
         <Route path="/products/published">
-          <ProductsPage />
-          {/* <ProductsList status="published" /> */}
+          <ProductsList status="published" />
         </Route>
         <Route path="/products/unpublished">
-          <ProductsPage />
-          {/* <ProductsList status="unpublished" /> */}
+          <ProductsList status="unpublished" />
         </Route>
         <Route path="/products/inactive">
-          <ProductsPage />
-          {/* <ProductsList status="inactive" /> */}
+          <ProductsList status="inactive" />
         </Route>
         <Route path="/products/add">
-          <ProductsPage />
-          {/* <AddProduct /> */}
+          {/* <ProductsPage /> */}
+          <AddProduct />
         </Route>
         <Route path="/products/:pid">
-          <ProductsPage />
-          {/* <UpdateProduct /> */}
+          {/* <ProductsPage /> */}
+          <UpdateProduct />
         </Route>
         <Route path="/services">
           <ServicesPage />
@@ -128,7 +124,6 @@ function App() {
         </Route>
         <Route path="/resources/support">
           <Support />
-          {/* <Support/> */}
         </Route>
         <Route path="/plans">
           <PlansPage />

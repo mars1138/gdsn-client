@@ -1,0 +1,53 @@
+.productCards {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.productCards h3 {
+  font-size: 2rem;
+}
+
+.productCards span {
+  display: block;
+  color: var(--green-1);
+  font-size: xx-large;
+  text-align: center;
+}
+
+.productCards a,
+.productCards a * {
+  transition: all 0.2s;
+}
+
+.productCards a:link,
+.productCards a:active,
+.productCards a:visited,
+.productCards a:hover {
+  width: 100%;
+  text-decoration: none;
+}
+
+.productCards a:hover div {
+  background: var(--secondary-light);
+}
+
+.productCards a:hover h3 {
+  color: var(--white-3);
+}
+
+.text {
+  color: var(--black-1);
+  width: 65%;
+  font-size: 1.75rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.addItem {
+  margin: 2rem 0 5rem 0;
+  display: flex;
+  justify-content: center;
+}
