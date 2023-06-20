@@ -99,7 +99,7 @@ const Auth = () => {
             token: res.userData.token,
           })
         );
-        history.push('/services');
+        history.push('/products');
       } catch (err) {
         console.log(err);
       }
@@ -127,7 +127,7 @@ const Auth = () => {
             token: res.userData.token,
           })
         );
-        history.push('/services');
+        history.push('/products');
       } catch (err) {
         console.log(err);
       }

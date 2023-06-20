@@ -131,7 +131,7 @@ function App() {
         <Route path="/about">
           <AboutPage />
         </Route>
-        {/* <Redirect to="/" /> */}
+        <Redirect to="/products" />
       </Switch>
     );
   } else {
