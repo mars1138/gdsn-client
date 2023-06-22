@@ -1,0 +1,86 @@
+.category {
+  margin: 2rem auto 5rem auto;
+  position: relative;
+}
+
+.category h3 {
+  /* display: block; */
+  padding: 0.5rem;
+  background: var(--secondary-light-2);
+}
+
+.category button {
+  font-size: 1rem;
+}
+
+.block-container {
+  padding: 1rem;
+  display: flex;
+  width: 100%;
+}
+
+.block-container button {
+  margin-right: 1rem;
+}
+
+.block-100,
+.block-50,
+.block-25 {
+  padding: 0 1rem;
+}
+
+.block-100 {
+  width: 100%;
+  /* display: flex; */
+}
+
+.block-50 {
+  width: 50%;
+}
+
+.block-25 {
+  width: 25%;
+}
+
+.close {
+  color: var(--gray-1);
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+}
+
+.close:hover {
+  color: var(--red-1);
+}
+
+.subscribers {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  /* border: 1px solid blue; */
+}
+
+.subscriber {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.subscriber p {
+  margin-top: 0.5rem;
+  color: var(--gray-1);
+}
+
+.pending {
+  color: var(--red-1);
+}
+
+.hide {
+  opacity: 0;
+}
