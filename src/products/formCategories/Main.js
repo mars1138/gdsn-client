@@ -14,7 +14,7 @@ const Main = (props) => {
   const { product, inputHandler } = props;
 
   return (
-    <div>
+    <div className={classes.category}>
       <h3>Main</h3>
       <div className={classes['block-container']}>
         <div className={classes['block-50']}>

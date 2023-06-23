@@ -9,8 +9,8 @@ import Card from '../shared/UIElements/Card';
 import Section from '../shared/components/layout/Section';
 
 import Main from './formCategories/Main';
-// import Dimensions from './formCategories/Dimensions';
-// import PackagingHandling from './formCategories/PackagingHandling';
+import Dimensions from './formCategories/Dimensions';
+import PackagingHandling from './formCategories/PackagingHandling';
 
 import { useForm } from '../shared/hooks/form-hook';
 import { useHttpClient } from '../shared/hooks/http-hook';
@@ -162,11 +162,12 @@ const AddProduct = () => {
               categoryOptions={categoryOptions}
               typeOptions={typeOptions}
             />
-            {/* <Dimensions inputHandler={inputHandler}/> */}
-            {/* <PackagingHandling
-            inputHandler={inputHandler}
-            packageOptions={packageOptions}
-            tempOptions={tempOptions} /> */}
+            <Dimensions inputHandler={inputHandler} />
+            <PackagingHandling
+              inputHandler={inputHandler}
+              packageOptions={packageOptions}
+              tempOptions={tempOptions}
+            />
             <div className={classes2['block-container']}>
               <Button type="submit" disabled={!formState.isValid}>
                 Add Item
