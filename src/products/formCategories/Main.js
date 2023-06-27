@@ -26,7 +26,7 @@ const Main = (props) => {
             validators={[VALIDATOR_REQUIRE()]}
             errorText="Please enter a valid name"
             initialValue={product ? product.name : ''}
-            // initialValid={true}
+            initialValid={props.edit}
             onInput={inputHandler}
           />
           <FormInput
@@ -37,7 +37,7 @@ const Main = (props) => {
             validators={[VALIDATOR_MINLENGTH(5)]}
             errorText="Please enter a description (min 10 characters)"
             initialValue={product ? product.description : ''}
-            // initialValid={true}
+            initialValid={props.edit}
             onInput={inputHandler}
           />
           <FormInput
@@ -52,7 +52,7 @@ const Main = (props) => {
             ]}
             errorText="Please enter a valid 14 digit GTIN"
             initialValue={product ? product.gtin : ''}
-            // initialValid={true}
+            initialValid={props.edit}
             onInput={inputHandler}
             edit={props.edit}
           />
@@ -65,7 +65,7 @@ const Main = (props) => {
             validators={[VALIDATOR_REQUIRE()]}
             errorText="Please select a category"
             selected={product ? product.category : ''}
-            // initialValid={true}
+            initialValid={props.edit}
             onInput={inputHandler}
             setSelectOption={props.setSelectOption}
           />
@@ -78,7 +78,7 @@ const Main = (props) => {
             validators={[VALIDATOR_REQUIRE()]}
             errorText="Please select a type"
             selected={product ? product.type : ''}
-            // initialValid={true}
+            initialValid={props.edit}
             onInput={inputHandler}
             edit={props.edit}
             setSelectOption={props.setSelectOption}
@@ -92,7 +92,7 @@ const Main = (props) => {
             // validators={[VALIDATOR_REQUIRE()]}
             errorText="Please provide an image"
             initialValue={product ? product.image : ''}
-            // initialValid={true}
+            initialValid={props.edit}
             onInput={inputHandler}
           />
         </div>

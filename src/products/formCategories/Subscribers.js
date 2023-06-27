@@ -13,14 +13,70 @@ const Subscriber = (props) => {
     props.toggleSubscriber(custId);
   };
 
-  return <Card index={props.subscriberNum} width="30"></Card>;
+  return (
+    <Card index={props.subscriberNum} width="30">
+      <div
+        className={classes.close}
+        onClick={() => {
+          toggleSubHandler(props.customer.id);
+        }}
+      >
+        {!deleteSub && (
+          <ion-icon size="small" src="/icons/trash-outline.svg"></ion-icon>
+        )}
+        {deleteSub && (
+          <ion-icon
+            size="small"
+            src="/icons/arrow-undo-circle-outline.svg"
+          ></ion-icon>
+        )}
+      </div>
+      <div className={classes.subscriber}>
+        <h4>{props.customer.name}</h4>
+        <h5>#{props.customer.id}</h5>
+        {!deleteSub && <p>Active</p>}
+        {deleteSub && <p style={{ color: 'var(--red-1)' }}>Remove</p>}
+      </div>
+    </Card>
+  );
 };
 
 const Subscribers = (props) => {
+  const customerList = useSelector((state) => state.customers.customerList);
+  const subscribers = props.subscribers;
+  const subscriberList = [];
 
-    return <div>
-        
+  let content;
+
+  console.log('subscribers: ', subscribers);
+  content = <p>No Subscribers</p>;
+
+  subscribers[0] &&
+    subscribers.forEach((subscriberNum, i) => {
+      const customer = customerList.find((cust) => cust.id === +subscriberNum);
+
+      subscriberList.push(
+        <Subscriber
+          key={subscriberNum}
+          index={i}
+          customer={customer}
+          toggleSubscriber={props.toggleSubscriber}
+        />
+      );
+    });
+
+  if (subscribers && subscribers.length > 0) content = subscriberList;
+
+  console.log('content: ', content);
+
+  return (
+    <div className={classes.category}>
+      <h3>Subscribers</h3>
+      <div className={classes['block-container']}>
+        <div className={classes.subscribers}>{content}</div>
+      </div>
     </div>
+  );
 };
 
 export default Subscribers;
