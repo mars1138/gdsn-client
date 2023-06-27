@@ -95,6 +95,8 @@ const AddProduct = () => {
       await sendRequest(url, 'POST', formData, {
         Authorization: 'Bearer ' + token,
       });
+
+      setDidSubmit(true);
     } catch (err) {
       console.log(err);
     }
