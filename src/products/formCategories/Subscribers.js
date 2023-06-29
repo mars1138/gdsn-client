@@ -48,7 +48,6 @@ const Subscribers = (props) => {
 
   let content;
 
-  console.log('subscribers: ', subscribers);
   content = <p>No Subscribers</p>;
 
   subscribers[0] &&
@@ -66,8 +65,6 @@ const Subscribers = (props) => {
     });
 
   if (subscribers && subscribers.length > 0) content = subscriberList;
-
-  console.log('content: ', content);
 
   return (
     <div className={classes.category}>

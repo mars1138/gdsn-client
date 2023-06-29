@@ -22,7 +22,7 @@ const Dimensions = (props) => {
             errorText="Please enter height in inches"
             initialValue={product ? product.height : ''}
             onInput={inputHandler}
-            initialValid={true}
+            initialValid={props.edit}
           />
           <FormInput
             key={product ? `W${product.width}` : 'width'}
@@ -33,7 +33,7 @@ const Dimensions = (props) => {
             errorText="Please enter width in inches"
             initialValue={product ? product.width : ''}
             onInput={inputHandler}
-            initialValid={true}
+            initialValid={props.edit}
           />
         </div>
         <div className={classes['block-25']}>
@@ -46,7 +46,7 @@ const Dimensions = (props) => {
             errorText="Please enter depth in inches"
             initialValue={product ? product.depth : ''}
             onInput={inputHandler}
-            initialValid={true}
+            initialValid={props.edit}
           />
           <FormInput
             key={product ? `WT${product.weight}` : 'weight'}
@@ -57,7 +57,7 @@ const Dimensions = (props) => {
             errorText="Please enter weight in pounds"
             initialValue={product ? product.weight : ''}
             onInput={inputHandler}
-            initialValid={true}
+            initialValid={props.edit}
           />
         </div>
       </div>

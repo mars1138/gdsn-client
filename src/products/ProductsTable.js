@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTable, useFilters, useSortBy, usePagination } from 'react-table';
 
@@ -560,11 +560,17 @@ const ProductsTable = (props) => {
                               />
                             </div>
                           )}
+                          {cell.column.Header === 'GTIN' && (
+                            <Link to={`/products/${cell.value}`}>
+                              {cell.value}
+                            </Link>
+                          )}
                           {cell.column.Header === 'Type' && type.name}
                           {cell.column.Header === 'Category' && category.name}
                           {cell.column.Header !== 'Image' &&
                             cell.column.Header !== 'Type' &&
                             cell.column.Header !== 'Category' &&
+                            cell.column.Header !== 'GTIN' &&
                             cell.render('Cell')}
                         </td>
                       );

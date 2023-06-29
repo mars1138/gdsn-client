@@ -17,7 +17,7 @@ const ResourcesPage = () => {
 
   cards.forEach((card) =>
     cardArray.push(
-      <Link to={`/resources/${card.title}`}>
+      <Link to={`/resources/${card.title}`} key={card.title}>
         <Card>
           <h3>{card.title}</h3>
           <p>{card.text}</p>
@@ -25,6 +25,7 @@ const ResourcesPage = () => {
       </Link>
     )
   );
+
   return (
     <React.Fragment>
       <Section>

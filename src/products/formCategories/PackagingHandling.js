@@ -28,6 +28,7 @@ const PackagingHandling = (props) => {
             selected={product ? product.packagingType : ''}
             onInput={inputHandler}
             setSelectOptions={props.setSelectOption}
+            initialValid={props.edit}
           />
         </div>
         <div className={classes['block-25']}>
@@ -46,6 +47,7 @@ const PackagingHandling = (props) => {
             selected={product ? product.tempUnits : ''}
             onInput={inputHandler}
             setSelectOption={props.setSelectOption}
+            initialValid={props.edit}
           />
           <FormInput
             key={
@@ -61,6 +63,7 @@ const PackagingHandling = (props) => {
             errorText="Please enter min temperature"
             initialValue={product ? product.minTemp : ''}
             onInput={inputHandler}
+            initialValid={props.edit}
           />
           <FormInput
             key={
@@ -76,6 +79,7 @@ const PackagingHandling = (props) => {
             errorText="Please enter max temperature"
             initialValue={product ? product.maxTemp : ''}
             onInput={inputHandler}
+            initialValid={props.edit}
           />
         </div>
         <div className={classes['block-50']}>
@@ -92,7 +96,7 @@ const PackagingHandling = (props) => {
             errorText="Please enter storage instructions"
             initialValue={product ? product.storageInstructions : ''}
             onInput={inputHandler}
-            initialValid={true}
+            initialValid={props.edit}
           />
         </div>
       </div>

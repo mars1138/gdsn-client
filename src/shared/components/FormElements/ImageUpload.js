@@ -3,14 +3,26 @@ import React, { useRef, useState, useEffect } from 'react';
 import Button from '../../UIElements/Button';
 import classes from './ImageUpload.module.css';
 
+// let imageCleared = false;
+
 const ImageUpload = (props) => {
   const [file, setFile] = useState();
   const [previewUrl, setPreviewUrl] = useState();
-  const [isValid, setIsValid] = useState(false);
+  const [isValid, setIsValid] = useState(props.initialValid);
+  const [imageCleared, setImageCleared] = useState(false);
 
   const filePickerRef = useRef();
 
   useEffect(() => {
+    console.log('props.initialValue: ', props.initialValue);
+    console.log('file: ', file);
+
+    // if (file === '') {
+    //   setPreviewUrl('');
+    //   setIsValid(false);
+    //   return;
+    // }
+
     if (!file) return;
 
     const fileReader = new FileReader();
@@ -20,7 +32,7 @@ const ImageUpload = (props) => {
     };
 
     fileReader.readAsDataURL(file);
-  }, [file]);
+  }, [file, props.initialValue]);
 
   const pickedHandler = (event) => {
     let pickedFile;
@@ -31,6 +43,8 @@ const ImageUpload = (props) => {
       setFile(pickedFile);
       setIsValid(true);
       fileIsValid = true;
+      // imageCleared = false;
+      setImageCleared(false);
     } else {
       setIsValid(false);
       fileIsValid = false;
@@ -41,6 +55,15 @@ const ImageUpload = (props) => {
 
   const pickImageHandler = () => {
     filePickerRef.current.click();
+  };
+
+  const clearImgHandler = () => {
+    setFile('');
+    setPreviewUrl('');
+    setIsValid(false);
+    setImageCleared(true);
+    // imageCleared = true;
+    props.onInput(props.id, '', false);
   };
 
   return (
@@ -59,16 +82,25 @@ const ImageUpload = (props) => {
         }`}
       >
         <div className={classes.preview}>
-          {props.initialValue && !previewUrl && (
+          {(props.initialValue || previewUrl) && !imageCleared && (
+            <div className={classes.close} onClick={clearImgHandler}>
+              <ion-icon size="small" src="/icons/trash-outline.svg"></ion-icon>
+            </div>
+          )}
+          {!imageCleared && props.initialValue && !previewUrl && (
             <img src={props.initialValue} alt="Preview" />
           )}
-          {previewUrl && <img src={previewUrl} alt="Preview" />}
-          {!props.initialValue && !previewUrl && <p>Please select an image.</p>}
+          {!imageCleared && previewUrl && (
+            <img src={previewUrl} alt="Preview" />
+          )}
+          {((!props.initialValue && !previewUrl) || imageCleared) && (
+            <p>Please select an image.</p>
+          )}
         </div>
         <Button type="button" onClick={pickImageHandler}>
           Browse Image
         </Button>
-        {!isValid && <p>{props.errorText}</p>}
+        {/* {!isValid && <p>{props.errorText}</p>} */}
       </div>
     </div>
   );

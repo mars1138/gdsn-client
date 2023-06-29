@@ -19,7 +19,7 @@
 }
 
 .card img {
-  border-radius: 3px;
+  border-radius: var(--borderRadius-card-img);
 }
 
 .width--20 {
