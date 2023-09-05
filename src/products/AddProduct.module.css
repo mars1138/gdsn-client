@@ -3,6 +3,10 @@
   margin: 0 auto;
 }
 
+.card-container h1 {
+  margin-left: 1rem;
+}
+
 .form {
   width: 100%;
 }

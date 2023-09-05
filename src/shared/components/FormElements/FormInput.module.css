@@ -10,6 +10,7 @@
 
 .form-control label {
   font-weight: bold;
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
@@ -17,9 +18,10 @@
 .form-control textarea {
   width: 100%;
   font: inherit;
+  font-size: 1.25rem;
   border: 1px solid var(--gray-3);
   background: var(--white-2);
-  padding: 0.15rem 0.25rem;
+  padding: 0.55rem;
 }
 
 .form-control input:focus,
@@ -31,9 +33,11 @@
 
 .form-control select {
   font: inherit;
+  font-size: 1.2rem;
   border: 1px solid var(--gray-3);
+  border-radius: var(--borderRadius-input);
   background: var(--white-2);
-  padding: 0.15rem 0.25rem;
+  padding: 0.55rem;
 }
 
 .form-control select:focus {

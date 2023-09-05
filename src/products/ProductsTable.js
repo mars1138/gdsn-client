@@ -248,29 +248,32 @@ const ProductsTable = (props) => {
 
   const deleteProductHandler = () => {
     const gtin = actionParams.gtin;
-    const existingProduct = catalog.find((item) => item.gtin === gtin);
-    console.log('existingProduct: ', existingProduct);
+    // const existingProduct = catalog.find((item) => item.gtin === gtin);
+    // console.log('existingProduct: ', existingProduct);
 
     let url;
 
     const fetchData = async () => {
-      try {
-        console.log('activating product...');
-        url = process.env.REACT_APP_BACKEND_URL + `/api/products/${gtin}`;
+      const update = async () => {
+        try {
+          url = process.env.REACT_APP_BACKEND_URL + `/api/products/${gtin}`;
 
-        await sendRequest(
-          url,
-          'DELETE',
-          {},
-          {
-            Authorization: 'Bearer ' + authToken,
-          }
-        );
+          await sendRequest(
+            url,
+            'DELETE',
+            {},
+            {
+              Authorization: 'Bearer ' + authToken,
+            }
+          );
 
-        history.push('/products');
-      } catch (err) {
-        console.log(err);
-      }
+          setActionCompleted('deleted.');
+        } catch (err) {
+          console.log(err);
+        }
+      };
+      update();
+      return { type: 'status_update', payload: null };
     };
 
     if (authToken && authUserId) {
