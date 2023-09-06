@@ -20,6 +20,7 @@
   font: inherit;
   font-size: 1.25rem;
   border: 1px solid var(--gray-3);
+  border-radius: var(--borderRadius-input);
   background: var(--white-2);
   padding: 0.55rem;
 }
