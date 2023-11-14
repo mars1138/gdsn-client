@@ -59,7 +59,6 @@ const ProductsTable = (props) => {
     const product = catalog.find((item) => item.gtin === gtin);
     const productSubs = [...product.subscribers];
     alreadySubbed = productSubs.includes(custId);
-    console.log('alreadySubbed: ', alreadySubbed);
   }
 
   const {
@@ -137,21 +136,16 @@ const ProductsTable = (props) => {
   };
 
   const publishProductHandler = () => {
-    console.log('actionParams: ', actionParams);
     const gtin = actionParams.gtin;
 
     if (!alreadySubbed) {
-      // console.log(gtin, custId);
-
       const existingProduct = catalog.find((item) => item.gtin === gtin);
-      console.log('existingProduct: ', existingProduct);
 
       let url;
 
       const fetchData = (authToken) => {
         const update = async (authToken) => {
           try {
-            console.log('exec replaceCatalog...');
             url = process.env.REACT_APP_BACKEND_URL + `/api/products/${gtin}`;
 
             const formData = new FormData();
@@ -198,7 +192,6 @@ const ProductsTable = (props) => {
   };
 
   const activeStatusHandler = () => {
-    console.log('actionParams: ', actionParams);
     const gtin = actionParams.gtin;
     const status = actionParams.action;
     const dateInactive =
@@ -206,14 +199,12 @@ const ProductsTable = (props) => {
         ? new Date(0).toISOString()
         : new Date().toISOString();
     const existingProduct = catalog.find((item) => item.gtin === gtin);
-    console.log('existingProduct: ', existingProduct);
 
     let url;
 
     const fetchData = (authToken) => {
       const update = async (authToken) => {
         try {
-          console.log('activating product...');
           url = process.env.REACT_APP_BACKEND_URL + `/api/products/${gtin}`;
 
           const formData = new FormData();
@@ -248,8 +239,6 @@ const ProductsTable = (props) => {
 
   const deleteProductHandler = () => {
     const gtin = actionParams.gtin;
-    // const existingProduct = catalog.find((item) => item.gtin === gtin);
-    // console.log('existingProduct: ', existingProduct);
 
     let url;
 
@@ -370,7 +359,6 @@ const ProductsTable = (props) => {
       {isSubmitting && <LoadingSpinner />}
 
       <Modal
-        // show={actionCompleted === null || !actionCompleted ? false : true}
         show={actionCompleted}
         onClear={actionCompletedHandler}
         msgHeader={`Success!`}

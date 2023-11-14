@@ -7,11 +7,9 @@
   top: 50%;
   left: 49.7%;
   background-color: rgba(255, 255, 255, 0.5);
-  /* background: transparent; */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid blue; */
   padding-right: 3%;
 }
 .lds-roller div {

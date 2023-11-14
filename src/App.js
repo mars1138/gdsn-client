@@ -23,21 +23,17 @@ import MainHeader from './shared/Navigation/MainHeader';
 import Footer from './shared/components/footer/Footer';
 import Auth from './user/Auth';
 import ScrollToTop from './shared/utilities/ScrollToTop';
-// import { useHttpClient } from './shared/hooks/http-hook';
 import { authActions } from './store/auth-slice';
 import { fetchCatalog } from './store/catalog-functions';
 
 let logoutTimer;
 
 function App() {
-  // const isAuth = false;
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
   const authUserId = useSelector((state) => state.auth.userId);
   const authToken = useSelector((state) => state.auth.token);
   const authExpire = useSelector((state) => state.auth.expireDate);
-
   const dispatch = useDispatch();
-  // const { sendRequest } = useHttpClient();
 
   let routes;
 
@@ -78,6 +74,7 @@ function App() {
     }
   }, [dispatch]);
 
+  // Routes displayed based on login state
   if (isAuth) {
     routes = (
       <Switch>
@@ -103,11 +100,9 @@ function App() {
           <ProductsList status="inactive" />
         </Route>
         <Route path="/products/add">
-          {/* <ProductsPage /> */}
           <AddProduct />
         </Route>
         <Route path="/products/:pid">
-          {/* <ProductsPage /> */}
           <UpdateProduct />
         </Route>
         <Route path="/services">

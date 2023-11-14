@@ -37,6 +37,7 @@ export const useForm = (initialInputs, initialFormValidity) => {
     isValid: initialFormValidity,
   });
 
+  // detect changes in input field and set validity
   const inputHandler = useCallback((id, value, isValid) => {
     dispatch({
       type: 'INPUT_CHANGE',
@@ -46,6 +47,7 @@ export const useForm = (initialInputs, initialFormValidity) => {
     });
   }, []);
 
+  // used for populating fields for existing data
   const setFormData = useCallback((inputData, formValidity) => {
     dispatch({
       type: 'SET_DATA',

@@ -43,6 +43,7 @@ const Auth = () => {
     history.push('/auth');
   }
 
+  // set login or signup window
   const modeHandler = () => {
     if (!isLoginMode) {
       setFormData(
@@ -91,8 +92,6 @@ const Auth = () => {
           }
         );
 
-        console.log('loginResponse: ', res);
-
         dispatch(
           authActions.login({
             user: res.userData.userId,
@@ -118,8 +117,6 @@ const Auth = () => {
             'Content-Type': 'application/json',
           }
         );
-
-        console.log('SignupResponse: ', res);
 
         dispatch(
           authActions.login({

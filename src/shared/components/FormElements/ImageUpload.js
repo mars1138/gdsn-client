@@ -3,8 +3,6 @@ import React, { useRef, useState, useEffect } from 'react';
 import Button from '../../UIElements/Button';
 import classes from './ImageUpload.module.css';
 
-// let imageCleared = false;
-
 const ImageUpload = (props) => {
   const [file, setFile] = useState();
   const [previewUrl, setPreviewUrl] = useState();
@@ -14,15 +12,6 @@ const ImageUpload = (props) => {
   const filePickerRef = useRef();
 
   useEffect(() => {
-    console.log('props.initialValue: ', props.initialValue);
-    console.log('file: ', file);
-
-    // if (file === '') {
-    //   setPreviewUrl('');
-    //   setIsValid(false);
-    //   return;
-    // }
-
     if (!file) return;
 
     const fileReader = new FileReader();
@@ -43,7 +32,6 @@ const ImageUpload = (props) => {
       setFile(pickedFile);
       setIsValid(true);
       fileIsValid = true;
-      // imageCleared = false;
       setImageCleared(false);
     } else {
       setIsValid(false);
@@ -62,7 +50,6 @@ const ImageUpload = (props) => {
     setPreviewUrl('');
     setIsValid(false);
     setImageCleared(true);
-    // imageCleared = true;
     props.onInput(props.id, '', false);
   };
 
@@ -100,7 +87,6 @@ const ImageUpload = (props) => {
         <Button type="button" onClick={pickImageHandler}>
           Browse Image
         </Button>
-        {/* {!isValid && <p>{props.errorText}</p>} */}
       </div>
     </div>
   );

@@ -54,7 +54,6 @@ const ContactForm = (props) => {
 
   const submitHandler = async (event) => {
     event.preventDefault();
-
     props.toggleSubmitting();
 
     try {
@@ -70,8 +69,6 @@ const ContactForm = (props) => {
         }),
         { 'Content-Type': 'application/json' }
       );
-
-      console.log(responseData);
 
       if (!responseData) {
         props.toggleSubmitting();
