@@ -5,6 +5,7 @@ import NavLinks from './NavLinks';
 import Logo from './Logo';
 import classes from './MainHeader.module.css';
 
+// MainHeader contains the header content including main navmenu
 const MainHeader = (props) => {
   return (
     <React.Fragment>

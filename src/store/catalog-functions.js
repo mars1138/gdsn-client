@@ -1,5 +1,6 @@
 import { catalogActions } from './catalog-slice';
 
+// retrieves catalog from backend server and updates redux state
 export const fetchCatalog = (userId, userToken) => {
   return async (dispatch) => {
     const fetchData = async () => {

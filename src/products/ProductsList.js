@@ -10,6 +10,8 @@ import { productsTabs } from '../assets/data/tabData';
 import { activeColumns, inactiveColumns } from '../assets/data/productsData';
 import classes from './ProductsList.module.css';
 
+// list of products will be rendered via ProductsTable based on status prop
+// empty products array renders 'no products'
 const ProductsList = (props) => {
   const catalog = useSelector((state) => state.catalog.products);
   const productsList = [];

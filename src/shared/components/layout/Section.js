@@ -16,6 +16,7 @@ const Section = (props) => {
   const trigger = props.trigger ? props.trigger : 0.35;
   const sectionRef = useRef();
 
+  // Sections are made visible as the user scrolls down the page
   const setRevealSections = useCallback(() => {
     const revealSection = (entries, observer) => {
       const [entry] = entries;

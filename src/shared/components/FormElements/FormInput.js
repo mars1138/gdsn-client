@@ -4,6 +4,8 @@ import { validate } from '../../utilities/validators';
 import classes from './FormInput.module.css';
 
 const inputReducer = (state, action) => {
+  // CHANGE will check input value against any validator functions recieved as props
+  // TOUCH sets an input as having been accessed by user
   switch (action.type) {
     case 'CHANGE':
       return {
@@ -23,6 +25,9 @@ const inputReducer = (state, action) => {
   }
 };
 
+// for each input element, state keeps track of value, valid state, and whether element has been clicked on/accessed by user
+// input element type is determined by props.element
+// onInput passed as props; originating from form-hook; form-hook will use arguments to determine overall form validity
 const FormInput = (props) => {
   const [inputState, dispatch] = useReducer(inputReducer, {
     value: props.initialValue || '',
@@ -32,7 +37,7 @@ const FormInput = (props) => {
 
   const { id, onInput } = props;
   const { value, isValid } = inputState;
-  const disabledClass = `${props.edit ? classes.disabled : ''}`;
+  const inputClasses = `${props.edit ? classes.disabled : ''}`;
 
   let element;
 
@@ -76,7 +81,7 @@ const FormInput = (props) => {
         onBlur={touchHandler}
         value={inputState.value}
         disabled={props.edit ? true : false}
-        className={disabledClass}
+        className={inputClasses}
       />
     );
   }
@@ -100,9 +105,10 @@ const FormInput = (props) => {
       props.selectOptions.forEach((option, index) => {
         optionsArray.push(
           <option
-            key={`${props.id ? props.id : 'option'}-${index}`}
+            // key={`${props.id ? props.id : 'option'}-${index}`}
+            key={option.name}
             value={option.id}
-            className={props.edit && disabledClass}
+            className={props.edit && inputClasses}
           >
             {option.name}
           </option>

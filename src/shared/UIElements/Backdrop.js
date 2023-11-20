@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import classes from './Backdrop.module.css';
 
+// backdrop used behind modals
 const Backdrop = (props) => {
   return ReactDOM.createPortal(
     <div className={classes.backdrop} onClick={props.onClick}></div>,

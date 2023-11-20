@@ -1,5 +1,8 @@
 import { useCallback, useReducer } from 'react';
 
+// INPUT_CHANGE processes change in input element value
+// SET_DATA is used to populate fields in edit mode
+// as an input element is changed, a check is made to see if the entered value is valid; if the rest of the inputs are valid, then entire form is valid
 const formReducer = (state, action) => {
   switch (action.type) {
     case 'INPUT_CHANGE':
@@ -31,6 +34,9 @@ const formReducer = (state, action) => {
   }
 };
 
+// initialInputs: object where key=input name, value=object with keys: value & isValid
+// inputHandler will be passed on to each input custom component to let form hook know if the entered value for that input is valid
+// setFormData:  used for populating fields for existing data
 export const useForm = (initialInputs, initialFormValidity) => {
   const [formState, dispatch] = useReducer(formReducer, {
     inputs: initialInputs,
@@ -47,7 +53,6 @@ export const useForm = (initialInputs, initialFormValidity) => {
     });
   }, []);
 
-  // used for populating fields for existing data
   const setFormData = useCallback((inputData, formValidity) => {
     dispatch({
       type: 'SET_DATA',

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router';
 
+// ensures that when user navigates to a page, window displays top of page
 const ScrollToTop = (props) => {
   const { pathname, hash } = useLocation();
 
@@ -24,4 +25,3 @@ const ScrollToTop = (props) => {
 };
 
 export default ScrollToTop;
-  

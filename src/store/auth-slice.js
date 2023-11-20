@@ -7,6 +7,8 @@ const initialAuth = {
   expireDate: null,
 };
 
+// this slice handles user login state
+// token will be included in post/update requests to server for authentication
 const authSlice = createSlice({
   name: 'authentication',
   initialState: initialAuth,

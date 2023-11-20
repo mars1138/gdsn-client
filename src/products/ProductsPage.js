@@ -13,10 +13,15 @@ import { productsHero as heroData } from '../assets/data/heroData';
 import { productsTabs } from '../assets/data/tabData';
 import classes from './ProductsPage.module.css';
 
+// Links on this page navigate to routes that will render ProductsList
+// ProductsList is the parent component of ProductsTable
+// ProductsTable will render products based on routing
 const ProductsPage = () => {
   const catalog = useSelector((state) => state.catalog.products);
   const activeCount = catalog.filter((item) => !item.dateInactive).length;
-  const publishedCount = catalog.filter((item) => item.datePublished).length;
+  const publishedCount = catalog.filter(
+    (item) => !item.dateInactive && item.datePublished
+  ).length;
   const unpublishedCount = catalog.filter(
     (item) => !item.dateInactive && !item.datePublished
   ).length;

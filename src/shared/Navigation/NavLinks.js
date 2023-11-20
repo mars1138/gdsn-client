@@ -11,8 +11,6 @@ import classes from './NavLinks.module.css';
 
 const NavLinks = () => {
   const menuLinks = [];
-  // const isAuth = false;
-  //   const isAuth = true;
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
   const dispatch = useDispatch();
   const history = useHistory();

@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 import NavDropdown from './NavDropdown';
 import classes from './NavMenuItems.module.css';
 
+// submenus will be rendered vertically in NavDropdown component
+// if depth level of submenu is greater than 1, then the submenu links will be offset to the right
 const NavMenuItems = (props) => {
   const items = props.items;
   const depthLevel = props.depthLevel;

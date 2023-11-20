@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Button from '../UIElements/Button';
 
+// useConfirmationModal hook allows us to set actions & state to handle multiple modals that may occur on the same page page
 export const useConfirmationModal = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
 
@@ -20,6 +21,7 @@ export const useConfirmationModal = () => {
   };
 };
 
+// allows us to set different functions and labels for multiple modals that may occur on the same page
 export const useConfirmModalFooter = (
   submitFunction,
   cancelFunction,

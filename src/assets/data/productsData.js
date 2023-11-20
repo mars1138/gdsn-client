@@ -123,19 +123,19 @@ export const typeOptions = [
 ];
 export const tempOptions = [
   { id: '', name: 'Select Temp. Unit' },
-  { id: 0, name: 'Farenheit' },
-  { id: 1, name: 'Celsius' },
+  { id: 1, name: 'Farenheit' },
+  { id: 2, name: 'Celsius' },
 ];
 export const packageOptions = [
   { id: '', name: 'Select Packaging Type' },
-  { id: 0, name: 'Bag' },
-  { id: 1, name: 'Bottle' },
-  { id: 2, name: 'Box' },
-  { id: 3, name: 'Carton' },
-  { id: 4, name: 'Crate' },
-  { id: 5, name: 'Envelope' },
-  { id: 6, name: 'Multipack' },
-  { id: 7, name: 'Not Packed' },
-  { id: 8, name: 'Roll' },
-  { id: 9, name: 'Wire' },
+  { id: 1, name: 'Bag' },
+  { id: 2, name: 'Bottle' },
+  { id: 3, name: 'Box' },
+  { id: 4, name: 'Carton' },
+  { id: 5, name: 'Crate' },
+  { id: 6, name: 'Envelope' },
+  { id: 7, name: 'Multipack' },
+  { id: 8, name: 'Not Packed' },
+  { id: 9, name: 'Roll' },
+  { id: 10, name: 'Wire' },
 ];

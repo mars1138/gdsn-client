@@ -19,11 +19,18 @@ import { categoryOptions, typeOptions } from '../assets/data/productsData';
 import { VALIDATOR_REQUIRE } from '../shared/utilities/validators';
 import classes from './ProductsTable.module.css';
 
+// Product Actions: For each item listed, actions are available depending on the status type of products being listed.  Each action will render a modal with appropriate text and options
+// Edit - causes UpdateProduct to render
+// Publish - will render a modal from which user can choose a customer to 'publish' product data.  Completion of publish will add customer# to product's subscribers array.  Subscribed customers can be removed in UpdateProduct
+// Deactivate - will set product as not available to publish to customers.
+// Reactivate - will clear product's date inactive property
+// Delete - permanently removes product from database
+
 const ProductsTable = (props) => {
   const [filterInput, setFilterInput] = useState('');
-  const [actionParams, setActionParams] = useState();
-  const [selectSubscriber, setSelectSubscriber] = useState();
-  const [actionCompleted, setActionCompleted] = useState();
+  const [actionParams, setActionParams] = useState(); // store parameters needed for actions (edit, publish, deactive, delete)
+  const [selectSubscriber, setSelectSubscriber] = useState(); // keep track of selected subscriber in selectSubscriberForm input element
+  const [actionCompleted, setActionCompleted] = useState(); // used for modal that informs user which action has been successfully completed
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -89,12 +96,14 @@ const ProductsTable = (props) => {
     usePagination
   );
 
+  // For search field
   const handleFilterChange = (event) => {
     const value = event.target.value || undefined;
     setFilter('name', value);
     setFilterInput(value);
   };
 
+  // useConfirmationModal hook used for each action to set appropriate options in modal
   const {
     showConfirmation: showConfirmActivate,
     setShowConfirmation: setShowConfirmActivate,
@@ -285,6 +294,7 @@ const ProductsTable = (props) => {
     setShowChooseSubscriber(false);
   };
 
+  // set footer options for the appropriate action modal
   const confirmActivateFooter = useConfirmModalFooter(
     activeStatusHandler,
     cancelHandler,

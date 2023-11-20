@@ -34,7 +34,7 @@ const UpdateProduct = () => {
   const [didSubmit, setDidSubmit] = useState(false);
 
   const [subscriberUpdate, setSubscriberUpdate] = useState([]);
-  const [selectOptionsValues, setSelectOptionsValues] = useState();
+  // const [selectOptionsValues, setSelectOptionsValues] = useState();
 
   const [formState, inputHandler, setFormData] = useForm(
     {
@@ -84,13 +84,13 @@ const UpdateProduct = () => {
     if (product.subscribers && product.subscribers.length > 0)
       setSubscriberUpdate([...product.subscribers]);
 
-    setSelectOptionsValues({
-      category: product.category,
-      type: product.type,
-      packagingType: product.packagingType,
-      tempUnits: product.tempUnits,
-      image: product.image,
-    });
+    // setSelectOptionsValues({
+    //   category: product.category,
+    //   type: product.type,
+    //   packagingType: product.packagingType,
+    //   tempUnits: product.tempUnits,
+    //   image: product.image,
+    // });
 
     setFormData(
       {
@@ -161,20 +161,20 @@ const UpdateProduct = () => {
     setLoadedProduct(product);
   }, [params.pid, catalog, setFormData]);
 
-  const selectOptionsHandler = (value) => {
-    const newVal = value;
+  // const selectOptionsHandler = (value) => {
+  //   const newVal = value;
 
-    setSelectOptionsValues((prev) => {
-      return { ...prev, ...newVal };
-    });
-  };
+  //   setSelectOptionsValues((prev) => {
+  //     return { ...prev, ...newVal };
+  //   });
+  // };
 
   const updateSubmitHandler = (event) => {
     event.preventDefault();
     setShowConfirmation(false);
 
-    console.log('formState: ', formState);
-    console.log('updateSubmit subscriberUpdate: ', subscriberUpdate);
+    // console.log('formState: ', formState);
+    // console.log('updateSubmit subscriberUpdate: ', subscriberUpdate);
 
     let url;
 
@@ -238,8 +238,8 @@ const UpdateProduct = () => {
     history.push('/products');
   };
 
-  console.log(selectOptionsValues);
-  console.log('loadedProduct: ', loadedProduct);
+  // console.log(selectOptionsValues);
+  // console.log('loadedProduct: ', loadedProduct);
 
   const errorModal = (
     <Modal
@@ -280,7 +280,7 @@ const UpdateProduct = () => {
             {isSubmitting && <LoadingSpinner />}
             <Main
               inputHandler={inputHandler}
-              setSelectOption={selectOptionsHandler}
+              // setSelectOption={selectOptionsHandler}
               product={loadedProduct}
               categoryOptions={categoryOptions}
               typeOptions={typeOptions}
@@ -293,7 +293,7 @@ const UpdateProduct = () => {
             />
             <PackagingHandling
               inputHandler={inputHandler}
-              setSelectOption={selectOptionsHandler}
+              // setSelectOption={selectOptionsHandler}
               onSubmit={updateSubmitHandler}
               product={loadedProduct}
               packageOptions={packageOptions}

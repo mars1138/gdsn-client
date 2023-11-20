@@ -1,5 +1,6 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 
+// hook returns common state and functions used for handling http requests
 export const useHttpClient = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState();
@@ -8,6 +9,8 @@ export const useHttpClient = () => {
   const sendRequest = useCallback(
     async (url, method = 'GET', body = null, headers = {}) => {
       setIsSubmitting(true);
+
+      // track active requests in case user navagates away from page
       const httpAbortCtrl = new AbortController();
       activeHttpRequests.current.push(httpAbortCtrl);
 
