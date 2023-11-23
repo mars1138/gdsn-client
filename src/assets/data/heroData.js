@@ -1,7 +1,7 @@
 export const homeHero = {
   title: 'Home',
   text:
-    'Welcome to GDSN-Plus! To begin creating your product catalog, please sign in or create an account. At the My Products page, you can then begin creating new items.',
+    'Welcome to GDSN-Plus! To begin creating your product catalog, please sign in or create an account. At the Products page, you can then begin creating new items.',
 };
 
 export const servicesHero = {
